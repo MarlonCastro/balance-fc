@@ -1,5 +1,4 @@
-import type { Team, Player } from '../types';
-import { calculateOverallSkill } from '../utils/balancingAlgorithm';
+import type { Team } from '../types';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
 
@@ -15,10 +14,9 @@ interface DrawHistoryItem {
 interface DrawHistoryProps {
   history: DrawHistoryItem[];
   onRedraw: (teams: Team[]) => void;
-  players: Player[];
 }
 
-export function DrawHistory({ history, onRedraw, players }: DrawHistoryProps) {
+export function DrawHistory({ history, onRedraw }: DrawHistoryProps) {
   if (history.length === 0) {
     return (
       <Card variant="outlined">

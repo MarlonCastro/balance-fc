@@ -1,4 +1,4 @@
-import type { Team, Player } from '../types';
+import type { Team } from '../types';
 import { calculateTeamDifference, calculateOverallSkill } from '../utils/balancingAlgorithm';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
@@ -57,7 +57,6 @@ export function DrawResults({ teams, onNewDraw, isDrawing = false, algorithm }: 
   const totalSkill = teams.reduce((sum, team) => sum + team.totalSkills, 0);
   const avgSkill = totalSkill / teams.length;
   const maxSkill = Math.max(...teams.map((t) => t.totalSkills));
-  const minSkill = Math.min(...teams.map((t) => t.totalSkills));
 
   const getBalanceStatus = () => {
     if (difference < 5) return { label: 'Excelente', color: 'text-green-600 dark:text-green-400', bg: 'bg-green-100 dark:bg-green-900/20' };

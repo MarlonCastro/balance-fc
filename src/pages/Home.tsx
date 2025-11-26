@@ -149,12 +149,12 @@ export function Home() {
           {matches.map((match) => {
             const playerCount = getMatchPlayerCount(match.id);
             return (
-              <Card
-                key={match.id}
-                variant="elevated"
-                className="hover:shadow-xl transition-all duration-200 cursor-pointer"
-                onClick={() => handleMatchClick(match.id)}
-              >
+              <div onClick={() => handleMatchClick(match.id)}>
+                <Card
+                  key={match.id}
+                  variant="elevated"
+                  className="hover:shadow-xl transition-all duration-200 cursor-pointer"
+                >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
@@ -242,6 +242,7 @@ export function Home() {
                   </div>
                 </div>
               </Card>
+              </div>
             );
           })}
         </div>

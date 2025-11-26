@@ -5,18 +5,14 @@ import { Card } from './ui/Card';
 
 interface PlayersListProps {
   players: Player[];
-  onEdit: (playerId: string) => void;
   onDelete: (playerId: string) => void;
   onUpdate: (playerId: string, updates: Partial<Player>) => void;
-  isLoading?: boolean;
 }
 
 export function PlayersList({
   players,
-  onEdit,
   onDelete,
   onUpdate,
-  isLoading = false,
 }: PlayersListProps) {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editName, setEditName] = useState('');
@@ -53,7 +49,7 @@ export function PlayersList({
     setEditName('');
     setEditSkill('');
     setEditSpeed('');
-    setEditWeight('');
+    setEditPhysicalCondition('');
   };
 
   const handleCancelEdit = () => {
@@ -61,7 +57,7 @@ export function PlayersList({
     setEditName('');
     setEditSkill('');
     setEditSpeed('');
-    setEditWeight('');
+    setEditPhysicalCondition('');
   };
 
   if (players.length === 0) {

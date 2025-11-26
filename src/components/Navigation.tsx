@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDarkMode } from '../hooks/useDarkMode';
 
 interface NavigationProps {
@@ -9,7 +9,6 @@ interface NavigationProps {
 
 export function Navigation({ currentStep, totalSteps }: NavigationProps) {
   const location = useLocation();
-  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isDark, toggle } = useDarkMode();
 

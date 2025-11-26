@@ -1,5 +1,4 @@
 import { useForm } from 'react-hook-form';
-import type { Match } from '../types';
 
 interface MatchFormData {
   name: string;

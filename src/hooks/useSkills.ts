@@ -127,7 +127,6 @@ export function useSkills(matchId?: string) {
       if (player && matchId) {
         // If player belongs to this match, remove the matchId
         if (player.matchId === matchId) {
-          const updatedPlayer = { ...player, matchId: undefined };
           localStorageService.updatePlayer(playerId, { matchId: undefined });
           // Remove from local state
           setPlayers((prev) => prev.filter((p) => p.id !== playerId));

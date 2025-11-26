@@ -10,7 +10,6 @@ import { DrawResults } from '../components/DrawResults';
 import { DrawHistory } from '../components/DrawHistory';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { Modal } from '../components/ui/Modal';
 
 export function TeamDraw() {
   const { matchId } = useParams<{ matchId: string }>();
@@ -75,7 +74,7 @@ export function TeamDraw() {
     handleDraw();
   };
 
-  const handleRedraw = (teams: typeof currentTeams) => {
+  const handleRedraw = () => {
     // Restore teams from history
     // This is a simplified version - you might want to restore the exact state
     showInfo('Times restaurados do histórico');
@@ -259,7 +258,7 @@ export function TeamDraw() {
 
       {/* Draw History */}
       {history.length > 0 && (
-        <DrawHistory history={history} onRedraw={handleRedraw} players={players} />
+        <DrawHistory history={history} onRedraw={handleRedraw} />
       )}
 
       {/* Draw History Stats */}

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { calculateOverallSkill, balanceTeams, calculateTeamDifference } from './balancingAlgorithm';
-import { Player, Team } from '../types';
+import type { Player, Team } from '../types';
 
 describe('balancingAlgorithm', () => {
   describe('calculateOverallSkill', () => {

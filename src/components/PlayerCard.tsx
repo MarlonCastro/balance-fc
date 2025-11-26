@@ -94,8 +94,8 @@ export function PlayerCard({
   return (
     <div
       className={`relative bg-white dark:bg-gray-800 rounded-xl border-2 transition-all duration-200 ${isParticipating
-          ? 'border-indigo-200 dark:border-indigo-700 shadow-md hover:shadow-lg'
-          : 'border-gray-200 dark:border-gray-700 opacity-60'
+        ? 'border-indigo-200 dark:border-indigo-700 shadow-md hover:shadow-lg'
+        : 'border-gray-200 dark:border-gray-700 opacity-60'
         }`}
     >
       {/* Top Right Controls */}

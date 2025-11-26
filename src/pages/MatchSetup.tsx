@@ -4,7 +4,6 @@ import { PlayersRegistration } from '../components/PlayersRegistration';
 import { useMatch } from '../hooks/useMatch';
 import { usePlayers } from '../hooks/usePlayers';
 import { useToast } from '../hooks/useToast';
-import type { Match } from '../types';
 
 interface MatchFormData {
   name: string;
@@ -27,7 +26,7 @@ export function MatchSetup() {
 
   const handleMatchSubmit = (data: MatchFormData) => {
     try {
-      const match: Match = createMatch(data);
+      createMatch(data);
       showSuccess('Pelada salva com sucesso!');
     } catch (error) {
       console.error('Failed to save match:', error);
